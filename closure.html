@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+
+    //add to cart korar jonno closure use kora jete pare
+
+    <button id="btn1">Button 1</button>
+    <button id="btn2">Button 2</button>
+    <script>
+        let add1 = (function (){
+            let counter = 0;
+            return function(){
+                counter++;
+               //this.innerText = counter;  //innerText innerHTML same kaj kore 
+                this.innerHTML = counter;
+            }
+        })();
+        let add2 = (function (){
+            let counter = 0;
+            return function(){
+                counter++;
+                //this.innerText = counter; //innerText innerHTML same kaj kore
+                this.innerHTML = counter;
+            }
+        })();
+
+        btn1.onclick =add1;
+        btn2.onclick =add2;
+    </script>
+</body>
+</html>
